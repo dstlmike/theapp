@@ -28,7 +28,7 @@
         <% if (items.length > 0) { %>
             <% items.forEach(item => { %>
                 <div style="display:inline-block;">
-                    <img src="data:<%= item.img.contentType %>;base64,<%= item.img.data.toString('base64') %>" width="200" />
+                    <img src="data:<%= item.img.contentType %>;base64,<%= item.img.data.toString('base64') %>" width="160" />
 
                 <p><%= item.img.description %></p></div>
             <% }); %>
