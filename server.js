@@ -7,12 +7,16 @@ var mongoose = require('mongoose');
 var imgSchema = require('./model.js');
 var multer = require('multer');
 var path = require('path');
-require('dotenv').config();
+app.set('trust proxy', true);
+
 app.set('view engine', 'ejs');
+app.set('views', 'views');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 //app.use(express.static(path.join(__dirname, 'views')));
-var connection_string = "mongodb://newnew:newnewnew@cluster0.esmha.mongodb.net/image?appName=Cluster0";
+var connection_string = "mongodb://dstlmike1:308boonave@ac-oc5e8f9-shard-00-00.dv4owuj.mongodb.net:27017,ac-oc5e8f9-shard-00-01.dv4owuj.mongodb.net:27017,ac-oc5e8f9-shard-00-02.dv4owuj.mongodb.net:27017/sampledbb?ssl=true&replicaSet=atlas-526m7w-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0";
 // MongoDB connection
-mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(connection_string)
     .then(() => console.log("DB Connected"))
     .catch(err => console.log(err));
 
@@ -28,7 +32,7 @@ const upload = multer({ storage: storage });
 app.get('/', (req, res) => {
     imgSchema.find({})
         .then(data => {
-            res.render('imagepage.ejs', { items: data });
+            res.render('./views/imagepage.ejs', { items: data });
         })
         .catch(err => console.log(err));
 });
