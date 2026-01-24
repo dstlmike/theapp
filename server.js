@@ -8,6 +8,7 @@ const imgSchema = require('./model');
 const multer = require('multer');
 require('dotenv').config();
 app.set("view engine", "ejs");
+app.use(express.static(path.join(__dirname, './views')));
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URL, {
