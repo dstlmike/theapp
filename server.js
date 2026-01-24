@@ -10,9 +10,9 @@ var path = require('path');
 require('dotenv').config();
 app.set('view engine', 'ejs');
 //app.use(express.static(path.join(__dirname, 'views')));
-var MONGO_URL = "process.env.MONGO_URL";
+var connection_string = "mongodb+srv://alexbot:308boonave@cluster0.esmha.mongodb.net/image?appName=Cluster0";
 // MongoDB connection
-mongoose.connect(MONGO_URL, {
+mongoose.connect(connection_string, {
 					useNewUrlParser: true, useUnifiedTopology: true
                 })
     .then(() => console.log("DB Connected"))
