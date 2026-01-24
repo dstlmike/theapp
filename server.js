@@ -43,7 +43,7 @@ app.post('/', upload.single('image'), (req, res, next) => {
         img: {
             data: req.file.buffer,
             contentType: req.file.mimetype,
-						description: req.file.description
+						description: req.body.description
         }
     };
     imgSchema.create(obj)
