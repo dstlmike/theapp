@@ -32,7 +32,7 @@ const upload = multer({ storage: storage });
 app.get('/', (req, res) => {
     imgSchema.find({})
         .then(data => {
-            res.render('./views/imagepage.ejs', { items: data });
+            res.render('imagepage.ejs', { items: data });
         })
         .catch(err => console.log(err));
 });
