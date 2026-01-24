@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const imgSchema = require('./model');
 const multer = require('multer');
+const path = require('path');
 require('dotenv').config();
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, './views')));
