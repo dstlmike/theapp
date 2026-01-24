@@ -10,11 +10,9 @@ var path = require('path');
 require('dotenv').config();
 app.set('view engine', 'ejs');
 //app.use(express.static(path.join(__dirname, 'views')));
-var connection_string = "mongodb+srv://alexbot:308boonave@cluster0.esmha.mongodb.net/image?appName=Cluster0";
+var connection_string = "mongodb://alexbot:308boonave@cluster0.esmha.mongodb.net/image?appName=Cluster0";
 // MongoDB connection
-mongoose.connect(connection_string, {
-					useNewUrlParser: true, useUnifiedTopology: true
-                })
+mongoose.connect(connection_string, { useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => console.log("DB Connected"))
     .catch(err => console.log(err));
 
@@ -30,7 +28,7 @@ const upload = multer({ storage: storage });
 app.get('/', (req, res) => {
     imgSchema.find({})
         .then(data => {
-            res.render('./views/imagepage.ejs', { items: data });
+            res.render('imagepage.ejs', { items: data });
         })
         .catch(err => console.log(err));
 });
