@@ -1,15 +1,15 @@
 // server.js
 
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-const imgSchema = require('./model');
-const multer = require('multer');
-const path = require('path');
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+var imgSchema = require('./model.js');
+var multer = require('multer');
+var path = require('path');
 require('dotenv').config();
-app.set("view engine", "ejs");
-app.use(express.static(path.join(__dirname, './views')));
+app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, 'views')));
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URL, {
@@ -30,7 +30,7 @@ const upload = multer({ storage: storage });
 app.get('/', (req, res) => {
     imgSchema.find({})
         .then(data => {
-            res.render('imagepage', { items: data });
+            res.render('imagepage.ejs', { items: data });
         })
         .catch(err => console.log(err));
 });
