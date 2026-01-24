@@ -9,10 +9,10 @@ var multer = require('multer');
 var path = require('path');
 require('dotenv').config();
 app.set('view engine', 'ejs');
-app.use(express.static(path.join(__dirname, 'views')));
-
+//app.use(express.static(path.join(__dirname, 'views')));
+var MONGO_URL = "process.env.MONGO_URL";
 // MongoDB connection
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect(MONGO_URL, {
 					useNewUrlParser: true, useUnifiedTopology: true
                 })
     .then(() => console.log("DB Connected"))
@@ -30,7 +30,7 @@ const upload = multer({ storage: storage });
 app.get('/', (req, res) => {
     imgSchema.find({})
         .then(data => {
-            res.render('imagepage.ejs', { items: data });
+            res.render('./views/imagepage.ejs', { items: data });
         })
         .catch(err => console.log(err));
 });
