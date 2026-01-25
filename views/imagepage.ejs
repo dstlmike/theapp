@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Uploading</title>
 </head>
-
 <body>
     <h1>To Upload Image on MongoDB</h1>
     <hr />
@@ -15,8 +14,6 @@
             <div>
                 <label for="image">Upload Image</label>
                 <input type="file" id="image" name="image" required />
-                <input type="text" id="description" name="description" required />
-
             </div>
             <div>
                 <button type="submit">Submit</button>
@@ -27,10 +24,9 @@
     <div>
         <% if (items.length > 0) { %>
             <% items.forEach(item => { %>
-                <div style="display:inline-block" width:"100%";>
-                    <img src="data:<%= item.img.contentType %>;base64,<%= item.img.data.toString('base64') %>" width="182" />
-
-                <p><%= item.img.description %></p></div>
+                <div>
+                    <img src="data:<%= item.img.contentType %>;base64,<%= item.img.data.toString('base64') %>" width="300" />
+                </div>
             <% }); %>
         <% } %>
     </div>
