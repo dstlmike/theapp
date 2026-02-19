@@ -2,7 +2,10 @@
 
 const mongoose = require('mongoose');
 const imgSchema = new mongoose.Schema({
-    name: String,
+    address: {
+        number: String
+    },
+        
     img: {
         data: Buffer,
         contentType: String,
