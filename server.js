@@ -40,6 +40,7 @@ app.get('/', (req, res) => {
 // Route to handle image upload
 app.post('/', upload.single('image'), (req, res, next) => {
     const obj = {
+		name: req.body.description,
         img: {
             data: req.file.buffer,
             contentType: req.file.mimetype,
