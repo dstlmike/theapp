@@ -34,7 +34,7 @@
     <div style="display:inline-block, justify-content: center, aline-items: center">
         <% if (items.length > 0) { %>
             <% items.forEach(item => { %>
-                <div>
+                <div style="justify-content:center aline-items:center">
                     <img src="data:<%= item.img.contentType %>;base64,<%= item.img.data.toString('base64') %>" width="360" style="border: 2px solid black;" />
 <p><%= item.img.description %></p>
 
