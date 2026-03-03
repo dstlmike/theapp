@@ -37,6 +37,14 @@ app.get('/', (req, res) => {
         .catch(err => console.log(err));
 });
 
+app.get('/home', (req, res) => {
+    imgSchema.find({})
+        .then(data => {
+            res.render('home.ejs', { items: data });
+        })
+        .catch(err => console.log(err));
+});
+
 // Route to handle image upload
 app.post('/', upload.single('image'), (req, res, next) => {
     const obj = {
