@@ -7,17 +7,18 @@
     <title>Image Uploading</title>
 
 <style>
-.content {
-            justify-content: space-around;
-            align-items: center;
-            display: inline-block;
-            flex-direction: column;
-        }
+.image-container {
+    display: flex; /* Positions children side by side */
+    gap: 20px;     /* Adds space between the images */
+    justify-content: center; /* Centers the images within the container (optional) */
+}
 
-        img {
-            width: 45%;
-margin: auto;
-        }
+.image-container img {
+    max-width: 100%; 
+    height: auto;
+    
+    flex: 1; 
+}
 </style>
 </head>
 <body>
@@ -41,14 +42,13 @@ margin: auto;
         </form>
     </div>
     <hr />
-<div class="content">
+<div class="image-container-grid">
         
         <% if (items.length > 0) { %>
             <% items.forEach(item => { %>
-             <div class="box">
+             
                     <img src="data:<%= item.img.contentType %>;base64,<%= item.img.data.toString('base64') %>" />
 <p style="text-align:center;"><%= item.img.description %></p>
-</div>
                 
             <% }); %>
         <% } %>
