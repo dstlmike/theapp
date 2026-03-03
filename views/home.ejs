@@ -57,7 +57,7 @@ width:70vw;
 <% if (items.length > 0) { %>
             <% items.forEach(item => { %>
              
-                    <img src="data:<%= item.img.contentType %>;base64,<%= item.img.data.toString('base64') %>" />
+                    <img src="data:<%= item.img.contentType %>;base64,<%= item.img.data.toString('base64') %>" "width:100%"/>
 <p style="text-align:center;"><%= item.img.description %></p>
                 
             <% }); %>
