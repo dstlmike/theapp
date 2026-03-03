@@ -16,17 +16,25 @@
             border-radius: 8px;
 
         }
+.containerr {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+display: flex;
+
+        }
 
 
         /* Desktop styles (screens wider than 768px) */
         @media (min-width: 768px) {
             body {
                 background: #d1d1d1;
-                display: flex;
+                display: inline-block;
                 justify-content: center;
 
             }
             .container {
+
                 width: 100%; /* Mimics a fixed window feel */
                 box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             }
@@ -55,7 +63,7 @@
         </form>
 </hr>
 </div>
-<div class="container">
+<div class="containerr">
 <% if (items.length > 0) { %>
             <% items.forEach(item => { %>
              
