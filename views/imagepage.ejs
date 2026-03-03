@@ -7,14 +7,15 @@
     <title>Image Uploading</title>
 
 <style>
-.column {
-            float: left;
-            width: 50%;
-
+.content {
+            justify-content: space-around;
+            align-items: center;
+            display: flex;
+            flex-direction: row;
         }
 
         img {
-            width: 95%
+            width: 80%;
         }
 </style>
 </head>
@@ -39,12 +40,12 @@
         </form>
     </div>
     <hr />
-<div class="column">
- <!--   <div style="display:inline-block"> -->
+<div class="content">
+        <div class="box">
         <% if (items.length > 0) { %>
             <% items.forEach(item => { %>
              
-                    <img src="data:<%= item.img.contentType %>;base64,<%= item.img.data.toString('base64') %>" width="175" style="display:inline-block; justify-content:center; align-items:center; border: 2px solid black; margin:auto;" />
+                    <img src="data:<%= item.img.contentType %>;base64,<%= item.img.data.toString('base64') %>" />
 <p style="text-align:center;"><%= item.img.description %></p>
 
                 
