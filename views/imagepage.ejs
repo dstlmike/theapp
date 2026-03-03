@@ -41,17 +41,17 @@
     </div>
     <hr />
 <div class="content">
-        <div class="box">
+        
         <% if (items.length > 0) { %>
             <% items.forEach(item => { %>
-             
+             <div class="box">
                     <img src="data:<%= item.img.contentType %>;base64,<%= item.img.data.toString('base64') %>" />
 <p style="text-align:center;"><%= item.img.description %></p>
-
+</div>
                 
             <% }); %>
         <% } %>
-    </div>
+    
 </div>
 </body>
 </html>
