@@ -45,6 +45,22 @@ app.get('/home', (req, res) => {
         .catch(err => console.log(err));
 });
 
+app.post('/home', upload.single('image'), (req, res, next) => {
+    const obj = {
+		address: req.body.description,
+	
+        img: {
+            data: req.file.buffer,
+            contentType: req.file.mimetype,
+						description: req.body.description
+        }
+    };
+    imgSchema.create(obj)
+        .then(item => {
+            res.redirect('/home');
+        })
+        .catch(err => console.log(err));
+});
 // Route to handle image upload
 app.post('/', upload.single('image'), (req, res, next) => {
     const obj = {
