@@ -13,7 +13,11 @@ margin-right: auto;
  justify-content: center;
 align-items: center;
         }
-
+img {
+display: block;
+  margin: auto;
+  width: 50%;
+}
         .container {
             background: white;
             padding: 20px;
@@ -36,6 +40,11 @@ width:90%;
 margin-left: auto;
 margin-right: auto;
             }
+img {
+display: block;
+  margin: auto;
+  width: 50%;
+}
             .container {
                 width: 100%; /* Mimics a fixed window feel */
                 box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -73,7 +82,7 @@ align-items: center;
 <% if (items.length > 0) { %>
             <% items.forEach(item => { %>
              
-                    <img src="data:<%= item.img.contentType %>;base64,<%= item.img.data.toString('base64') %>" width="70%" style="margin-left:auto; margin-right:auto; justify-content: center; align-items: center;"/>
+                    <img src="data:<%= item.img.contentType %>;base64,<%= item.img.data.toString('base64') %>" width="70%"/>
 <p style="text-align:center;"><%= item.img.description %></p>
                 
             <% }); %>
