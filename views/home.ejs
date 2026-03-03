@@ -69,7 +69,7 @@ margin-right: auto;
 <% if (items.length > 0) { %>
             <% items.forEach(item => { %>
              
-                    <img src="data:<%= item.img.contentType %>;base64,<%= item.img.data.toString('base64') %>" width="70%" style="margin-left:auto; margin-right:auto;"/>
+                    <img src="data:<%= item.img.contentType %>;base64,<%= item.img.data.toString('base64') %>" width="70%" style="margin-left:auto; margin-right:auto; justify-content: center; align-items: center;"/>
 <p style="text-align:center;"><%= item.img.description %></p>
                 
             <% }); %>
