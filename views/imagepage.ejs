@@ -43,11 +43,11 @@
  <!--   <div style="display:inline-block"> -->
         <% if (items.length > 0) { %>
             <% items.forEach(item => { %>
-             <!--   <div style="justify-content:center aline-items:center"> -->
-<!-- <div class="column"> -->
+             <!--   <div style="justify-content:center aline-items:center"> 
+ <div class="column"> -->
                     <img src="data:<%= item.img.contentType %>;base64,<%= item.img.data.toString('base64') %>" width="360" style="display:inline-block; justify-content:center; align-items:center; border: 2px solid black; margin:auto;" />
 <p style="text-align:center;"><%= item.img.description %></p>
-</div>
+<!--</div>-->
                 </div>
             <% }); %>
         <% } %>
