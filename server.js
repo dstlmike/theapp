@@ -32,7 +32,7 @@ const upload = multer({ storage: storage });
 app.get('/', (req, res) => {
     imgSchema.find({})
         .then(data => {
-            res.render('imagepage.ejs', { items: data });
+            res.render('home.ejs', { items: data });
         })
         .catch(err => console.log(err));
 });
@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
 app.get('/home', (req, res) => {
     imgSchema.find({})
         .then(data => {
-            res.render('home.ejs', { items: data });
+            res.render('imagepage.ejs', { items: data });
         })
         .catch(err => console.log(err));
 });
