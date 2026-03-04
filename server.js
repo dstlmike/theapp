@@ -1,8 +1,8 @@
 // server.js
-var hbs = require('hbs');
+//var hbs = require('hbs');
 
 // register path to partials
-hbs.registerPartials(__dirname + '/partials/');
+//hbs.registerPartials(__dirname + '/partials/');
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -14,7 +14,7 @@ app.set('trust proxy', true);
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
-app.use(express.static(path.join(__dirname, 'partials')));
+//app.use(express.static(path.join(__dirname, 'partials')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 //app.use(express.static(path.join(__dirname, 'views')));
