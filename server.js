@@ -14,6 +14,7 @@ app.set('trust proxy', true);
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
+app.use(express.static(path.join(__dirname, 'partials')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 //app.use(express.static(path.join(__dirname, 'views')));
