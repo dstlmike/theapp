@@ -5,7 +5,15 @@
 
     <style>
 @media print {
-    body { width: 9.5in; height: 11in; }
+@page {
+    size: 8.5in 11in;
+    margin: 0; /* Optional: adjust margins as needed */
+  }
+  body {
+    width: 8.5in;
+    height: 11in;
+  }
+}
     #pdf-content {
         /* Ensure content doesn't break in the middle of text/images */
         page-break-inside: avoid;
