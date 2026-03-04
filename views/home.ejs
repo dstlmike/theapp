@@ -57,6 +57,10 @@ align-items: center;
 
 
 .flex-container p {
+width: 30%;
+padding-left:2%; 
+padding-right:2%;
+}
 
 .flex-container {
   display: flex;
@@ -120,7 +124,7 @@ align-items: center;
             <% items.forEach(item => { %>
            
                     <img src="data:<%= item.img.contentType %>;base64,<%= item.img.data.toString('base64') %>"/>
-<p style="width:40%; padding-left:2%; padding-right:2%;"><%= item.img.description %><br><br></p>
+<p><%= item.img.description %><br><br></p>
                
             <% }); %>
         <% } %>
