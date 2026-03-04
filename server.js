@@ -1,8 +1,8 @@
 // server.js
-//var hbs = require('hbs');
+var hbs = require('hbs');
 
 // register path to partials
-//hbs.registerPartials(__dirname + '/partials');
+hbs.registerPartials(__dirname + '/partials/');
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -51,7 +51,7 @@ app.get('/home', (req, res) => {
 app.post('/home', upload.single('image'), (req, res, next) => {
     const obj = {
 		address: req.body.description,
-	
+
         img: {
             data: req.file.buffer,
             contentType: req.file.mimetype,
@@ -68,7 +68,7 @@ app.post('/home', upload.single('image'), (req, res, next) => {
 app.post('/', upload.single('image'), (req, res, next) => {
     const obj = {
 		address: req.body.description,
-	
+
         img: {
             data: req.file.buffer,
             contentType: req.file.mimetype,
