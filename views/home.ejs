@@ -4,6 +4,13 @@
     <meta name="viewport" content="width=device-width;">
  <script src="https://cdnjs.cloudflare.com"></script>
     <style>
+@media print {
+    body { width: 9.5in; height: 11in; }
+    #pdf-content {
+        /* Ensure content doesn't break in the middle of text/images */
+        page-break-inside: avoid;
+    }
+}
         /* CSS to style your content */
         #content-to-export {
             width: 9.5in; /* Set width to target size */
@@ -156,9 +163,6 @@ margin-left:2%;
         <% } %>
 </div> 
 <button id="download-btn">Download PDF</button>
-
-    <div id="content-to-export">
-   
 
     <script src="script.js"></script>
 </body>
