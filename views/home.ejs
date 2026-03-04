@@ -2,7 +2,16 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width;">
+ <script src="https://cdnjs.cloudflare.com"></script>
     <style>
+        /* CSS to style your content */
+        #content-to-export {
+            width: 9.5in; /* Set width to target size */
+            padding: 20px;
+            background: white;
+        }
+
+
         /* Mobile styles (default) */
         body {
             font-family: sans-serif;
@@ -143,5 +152,15 @@ margin-left:2%;
             <% }); %>
         <% } %>
 </div> 
+<button id="download-btn">Download PDF</button>
+
+    <div id="content-to-export">
+        <h1>My Report</h1>
+        <p>This text block will be exported.</p>
+        <img src="your-image.jpg" alt="Description" />
+        <p>More text and images here...</p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
