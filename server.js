@@ -1,5 +1,8 @@
 // server.js
+var hbs = require('hbs');
 
+// register path to partials
+hbs.registerPartials(__dirname + '/partials');
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
