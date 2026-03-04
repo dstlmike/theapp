@@ -129,16 +129,7 @@ margin-left:2%;
         </form>
 </hr>
 </div>
-<div class="flex-container">
-<% if (items.length > 0) { %>
-            <% items.forEach(item => { %>
-             
-                    <img src="data:<%= item.img.contentType %>;base64,<%= item.img.data.toString('base64') %>"/>
-<p style="text-align:center; padding-left:10%; padding-right:10%;"><%= item.img.description %><br><br></p>
-                
-            <% }); %>
-        <% } %>
-</div>
+
 <div class="flex-container">  
 
 <% if (items.length > 0) { %>
