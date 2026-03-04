@@ -54,6 +54,27 @@ margin-right: auto;
 align-items: center;
             }
         }
+
+
+
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  gap: 10px; /* Optional: Adds space between the items */
+  justify-content: space-between; /* Optional: Distributes space evenly */
+}
+
+.flex-container img {
+  /* Calculates width to be less than 50% to leave room for the gap */
+  width: calc(50% - 5px); 
+  height: auto;
+  /* Ensures padding and border are included in the width calculation */
+  box-sizing: border-box; 
+  /* Ensures images maintain aspect ratio and fill space nicely */
+  object-fit: cover; 
+}
+
     </style>
 </head>
 <body>
@@ -84,6 +105,17 @@ align-items: center;
 </hr>
 </div>
 <div class="container">
+<% if (items.length > 0) { %>
+            <% items.forEach(item => { %>
+             
+                    <img src="data:<%= item.img.contentType %>;base64,<%= item.img.data.toString('base64') %>"/>
+<p style="text-align:center; padding-left:10%; padding-right:10%;"><%= item.img.description %><br><br></p>
+                
+            <% }); %>
+        <% } %>
+</div>
+
+<div class="flex-container">
 <% if (items.length > 0) { %>
             <% items.forEach(item => { %>
              
